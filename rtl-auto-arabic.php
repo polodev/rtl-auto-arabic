@@ -4,7 +4,7 @@ namespace App\Github;
 /*
 Plugin Name: Rtl auto arabic
 Plugin URI: https://www.radiustheme.com
-Description: changed to rtl arabic
+Description: rtl-auto-arabic for demo purpose
 Version: 1.0
 Author: Polo Dev
 Author URI: https://www.radiustheme.com
