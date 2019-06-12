@@ -14,6 +14,9 @@ class Rtl_auto_arabic {
   public $version = '1.0';
   public function __construct()
   {
+    if ( !is_rtl() ) {
+      return false;
+    }
     add_action( 'wp_footer', array($this, 'google_translate_html_code' ) );
     add_action( 'wp_head', array($this, 'hide_google_topbar' ) );
     add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ), 20 );
