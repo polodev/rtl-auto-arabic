@@ -16,41 +16,19 @@ function googleTranslateElementInit() {
 ;(function ($) {
 "use strict";
 
-// var is_changed = true;
-
-// var lang_change = {
-//   init: function (lang) {
-//     if (is_changed) {
-//       this.changeLang(lang)
-//       is_changed = false;
-//     }
-//   },
-//   changeLang: function (lang) {
-//     var $frame = $('.goog-te-menu-frame:first');
-//     console.log('$frame', $frame)
-//     if (!$frame.size()) {
-//       console.log("Error: Could not find Google translate frame.");
-//       return false;
-//     }
-//     .find('span.text:contains('+lang+')').get(0).click();
-//     console.log('changed')
-//     return false;
-//   },
-
-// }
-
-
-
-
 
 $(window).on('load', function () {
 
+  // setInterval will be happen until page found google translate toolbar
   var intervalId = setInterval(function () {
-    var $frame = $('.goog-te-menu-frame:first');
     var lang = 'Arabic'
+
+    var $frame = $('.goog-te-menu-frame:first');
+    // if frame is not defined page didn't fetch translate toolbar yet
     if (!$frame) {
       return false;
     }
+    // if frame is not defined page didn't fetch translate toolbar yet
     var $frame_menu_item =  $frame.contents().find('.goog-te-menu2-item') ;
     if (!$frame_menu_item) {
       return false;
@@ -62,12 +40,6 @@ $(window).on('load', function () {
     clearInterval(intervalId);
     console.log('inteval cleared')
   }, 2000)
-
-
-
-  // setTimeout(function () {
-  //   lang_change.init('Arabic');
-  // }, 2000)
 
 
 
